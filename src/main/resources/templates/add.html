@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link th:href="@{../static/add.css}" href="../static/add.css" rel="stylesheet" type="text/css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:600|Noto+Sans|Open+Sans:400,700&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        body{
+            height: 100vh;
+            align-items: center;
+            text-align: center;
+            font-family: sans-serif;
+            background:rgba(36, 113, 177, 0.623);
+            background-size: cover;
+
+
+        }
+        .container{
+            margin-top: 2%;
+            margin-left: 37%;
+            justify-content: space-around;
+            text-align: center;
+            align-items: center;
+            width: 30%;
+            background: rgba(255, 255, 255, 0.575);
+            padding: 50px 30px;
+
+        }
+        header{
+            font-size: 20px;
+            margin-bottom: 60px;
+            font-family: 'Montserrat', sans-serif;
+
+        }
+        .input-field, form .btn{
+            margin: 25px 0;
+            position: relative;
+            height: 50px;
+            width: 100%;
+        }
+        .input-field input{
+            height: 100%;
+            width: 100%;
+            border: 1px solid silver;
+            padding-left: 15px;
+            outline: none;
+            font-size: 19px;
+            transition: .4s;
+        }
+        input:focus{
+            border: 1px solid #1DA1F2;
+        }
+        .input-field label, span.show{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .input-field label{
+            left: 15px;
+            pointer-events: none;
+            color: grey;
+            font-size: 18px;
+            transition: .4s;
+        }
+        span.show{
+            right: 20px;
+            color: #111;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+            visibility: hidden;
+            font-family: 'Open Sans', sans-serif;
+        }
+        input:valid ~ span.show{
+            visibility: visible;
+        }
+        input:focus ~ label,
+        input:valid ~ label{
+            transform: translateY(-43px);
+
+            font-size: 15px;
+            color: #1DA1F2;
+        }
+        form .btn{
+            margin-top: 15px;
+            overflow: hidden;
+            z-index: 111;
+            background: #1DA1F2;
+        }
+
+
+
+        button{
+            padding: 12px;
+            width: 100%;
+            height: 100%;
+            border: none;
+            background:#1DA1F2;
+            outline: none;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>Add Phone Number</header>
+    <form method="get" action="/addNumber">
+        <div class="input-field">
+            <input type="text" name="name" required>
+            <label>Full Name</label>
+        </div>
+        <div class="input-field">
+            <input type="number" name="phone" required>
+            <label>Phone Number</label>
+        </div>
+
+
+                <button type="submit">Submit</button>
+
+
+    </form>
+
+</div>
+
+</body>
+</html>
